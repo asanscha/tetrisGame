@@ -9,9 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const lTetromino = [
         [1, width + 1, width * 2 + 1, 2],
         [width, width + 1, width + 2, width * 2 + 2],
-        [1, width + 1, width * 2 + 1, width *],
+        [1, width + 1, width * 2 + 1, width *2],
         [width, width * 2, width * 2 + 1, width * 2 + 2]
     ]
+
     const zTetromino = [
         [0, width, width + 1, width * 2 + 1],
         [width + 1, width + 2, width * 2, width * 2 + 1],
@@ -40,7 +41,23 @@ document.addEventListener('DOMContentLoaded', () => {
         [width, width + 1, width + 2, width + 3]
     ]
 
-    const theTetrominoes = [lTetromino, zTetromino, tTetromino, oTetromino, iTetromino]
+    const theTetrominoes = [lTetromino, zTetromino, tTetromino, oTetromino, iTetromino];
+
+    let currentPosition = 4
+    let current = theTetrominoes[0][0]
+
+    //draw the first rotation of the first tetromino
+    function draw() {
+        current.forEach(index => {
+            squares[currentPosition + index].classList.add('tetromino')
+        })
+    }
+
+    draw()
+
+
+
+    
 
 })
 
